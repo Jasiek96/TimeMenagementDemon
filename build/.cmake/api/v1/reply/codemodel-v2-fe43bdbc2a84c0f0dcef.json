@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "DateTimeTest",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "DateTimeTestAuto::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DateTimeTestAuto-Debug-8dd7559060e9c6fb58a6.json",
+					"name" : "DateTimeTestAuto",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "DateTimeTestManual::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DateTimeTestManual-Debug-d46eb6277f6392baaa96.json",
+					"name" : "DateTimeTestManual",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jasiekrz/Desktop/Informatyka_stosowna/C++/Projekt/build",
+		"source" : "/home/jasiekrz/Desktop/Informatyka_stosowna/C++/Projekt"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

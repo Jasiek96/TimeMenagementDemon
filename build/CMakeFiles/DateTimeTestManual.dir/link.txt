@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/DateTimeTestManual.dir/src/DateTime.cpp.o CMakeFiles/DateTimeTestManual.dir/test/testDateTimeManual.cpp.o -o DateTimeTestManual  /usr/local/lib/libgtest.a -lpthread 

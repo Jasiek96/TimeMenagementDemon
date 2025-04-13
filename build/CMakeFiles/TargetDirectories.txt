@@ -1,0 +1,4 @@
+/home/jasiekrz/Desktop/Informatyka_stosowna/C++/Projekt/build/CMakeFiles/DateTimeTestManual.dir
+/home/jasiekrz/Desktop/Informatyka_stosowna/C++/Projekt/build/CMakeFiles/DateTimeTestAuto.dir
+/home/jasiekrz/Desktop/Informatyka_stosowna/C++/Projekt/build/CMakeFiles/edit_cache.dir
+/home/jasiekrz/Desktop/Informatyka_stosowna/C++/Projekt/build/CMakeFiles/rebuild_cache.dir
