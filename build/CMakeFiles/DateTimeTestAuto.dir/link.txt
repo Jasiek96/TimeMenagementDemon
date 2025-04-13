@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/DateTimeTestAuto.dir/src/DateTime.cpp.o CMakeFiles/DateTimeTestAuto.dir/test/testDateTimeAuto.cpp.o -o DateTimeTestAuto  /usr/local/lib/libgtest.a -lpthread 
