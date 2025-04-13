@@ -28,27 +28,13 @@ This project aims to provide a robust time management solution. Users can schedu
 
 Step-by-step instructions on how to set up the project:
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/Jasiek96/TimeMenagementDemon
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd your-repo
-    ```
-3. Compile the project:
-    ```bash
-    g++ -o output_file main.cpp
-    ```
-4. Run the program:
-    ```bash
-    ./output_file
-    ```
+To Be Done 
+
 
 ## Usage
 
-After running the application, users can add events, set their priorities, and enable notifications. The application will ensure timely reminders for scheduled events.
+To Be Done
 
 ## License
 
-State the license under which the project is distributed. For example:
+To Be Done
