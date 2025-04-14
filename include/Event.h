@@ -12,6 +12,7 @@ private:
     int priority = 3; // 1-5, 1 - najniższy, 5 - najwyższy
     bool notification = false; // true - powiadomienie, false - brak powiadomienia
 public:
+    Event();
     Event(const std::string& name, const std::string& description, const DateTime& eventDateTime, int priority = 3, bool notification = false);
     Event(const Event& other); // konstruktor kopiujący
     Event& operator=(const Event& other); // operator przypisania
