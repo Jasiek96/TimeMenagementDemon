@@ -33,7 +33,7 @@ public:
     void setNotification(bool notification);
 
     // Metody pomocnicze
-    void display() const; // wyświetlanie szczegółów wydarzenia
+     virtual void display() const;  // wyświetlanie szczegółów wydarzenia
 
 };
 #endif // EVENT_H

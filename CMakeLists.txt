@@ -7,7 +7,9 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 # Common sources
 set(COMMON_SOURCES
     src/DateTime.cpp
-    src/Event.cpp  # Added Event.cpp to the sources
+    src/Event.cpp
+    src/Event_meeting.cpp
+    src/Event_task.cpp
 )
 
 # Add Google Test
@@ -25,3 +27,11 @@ target_link_libraries(DateTimeTestAuto ${GTEST_LIBRARIES} pthread)
 # Executable for testEventAuto
 add_executable(EventAuto ${COMMON_SOURCES} test/testEventAuto.cpp)
 target_link_libraries(EventAuto ${GTEST_LIBRARIES} pthread)  # Fixed target linking
+
+# Executable for testMeeting
+add_executable(MeetingTest ${COMMON_SOURCES} test/testMeeting.cpp)
+target_link_libraries(MeetingTest ${GTEST_LIBRARIES} pthread)
+
+# Executable for testTask
+add_executable(TaskTest ${COMMON_SOURCES} test/testTask.cpp)
+target_link_libraries(TaskTest ${GTEST_LIBRARIES} pthread)
