@@ -28,11 +28,13 @@ The code provides basic building blocks for working with date–time values and 
 
 ## Project Structure
 
+```text
 TimeMenagementDemon/
-├─ include/ # Public headers (DateTime, Event, helpers)
-├─ src/ # Library / implementation sources
-├─ test/ # GoogleTest sources (manual/unit tests)
-└─ CMakeLists.txt # CMake build
+├── include/          # Public headers (DateTime, Event, helpers)
+├── src/              # Library / implementation sources
+├── test/             # GoogleTest sources (manual/unit tests)
+└── CMakeLists.txt    # CMake build
+```
 
 ## Requirements
 
@@ -67,5 +69,4 @@ then you can access the tests and app by following commands
 
 ## License
 
-Open access / open-source. This repository is released under the **MIT License**.  
-You may use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies, subject to the MIT terms.
+Open access / open-source. This repository is released under the **MIT License**.
