@@ -47,7 +47,7 @@ TimeMenagementDemon/
 
 ## Build & Run
 
-From the **repository root**, do an in-source configure and build:
+From the **repository root**, do:
 
 ```bash
 cmake .
