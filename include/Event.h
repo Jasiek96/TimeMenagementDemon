@@ -6,6 +6,8 @@
 
 class Event
 {
+    friend class EventManager;
+
 private:
     std::string name;
     std::string description;
