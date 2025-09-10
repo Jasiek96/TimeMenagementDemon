@@ -19,7 +19,6 @@ public:
 
     void display() const override;
 
-    // Gettery i settery
     const std::string &getLocation() const;
     void setLocation(const std::string &loc);
 
@@ -29,4 +28,4 @@ public:
     void removeParticipant(const std::string &participant);
 };
 
-#endif // EVENT_MEETING_H
+#endif

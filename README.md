@@ -1,39 +1,71 @@
-# Time Management App
+# TimeMenagementDemon
 
-An application designed to help users manage their time effectively by scheduling events and sending notifications using the "daemon" concept.
+A small C++ project focused on date/time utilities and event structures.  
+**Note:** At this stage the repository builds **GoogleTest-based tests** and initial model of the application.
 
-**Note:** This project is currently in progress and is being developed as a semestral work for the C++ laboratory course.
+---
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Installation](#installation)
-4. [Usage](#usage)
-5. [License](#license)
-6. [Contact](#contact)
+- [Overview](#overview)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Requirements](#requirements)
+- [Build & Run ](# Build & Run)
+- [License](#license)
 
-## Introduction
+---
 
-This project aims to provide a robust time management solution. Users can schedule events, set priorities, and receive notifications for upcoming events. The application leverages the "daemon" concept to run background processes for event notifications.
+## Overview
+
+The code provides basic building blocks for working with date–time values and event objects (e.g., title, description, time, priority, notification flag). The current entry point is a **GoogleTest** target used to verify and demonstrate functionality.
 
 ## Features
 
-- Schedule and manage events with detailed descriptions.
-- Set priorities for events (1-5 scale).
-- Receive notifications for upcoming events.
-- Background processing using the "daemon" concept.
+- Lightweight `DateTime` and `Event`-style abstractions
+- Basic validation and formatted input/output
+- GoogleTest-based manual/unit tests
 
-## Installation
+## Project Structure
 
-Step-by-step instructions on how to set up the project:
+TimeMenagementDemon/
+├─ include/ # Public headers (DateTime, Event, helpers)
+├─ src/ # Library / implementation sources
+├─ test/ # GoogleTest sources (manual/unit tests)
+└─ CMakeLists.txt # CMake build
 
-To Be Done
+## Requirements
 
-## Usage
+- C++17-compatible compiler (GCC)
+- CMake ≥ 3.16
+- Make (on Linux/macOS) or a build tool supported by your platform
+- GoogleTest available to CMake
 
-To Be Done
+> If GoogleTest is not fetched automatically by CMake in your setup, install it.
+
+## Build & Run
+
+From the **repository root**, do an in-source configure and build:
+
+```bash
+cmake .
+make
+```
+
+then you can access the tests and app by following commands
+
+```bash
+./DateTimeTestManual
+./DateTimeTestAuto
+./DateTimeTestManual
+./EventTestAuto
+./MeetingTestAuto
+./TaskTestAuto
+./EventManagerTestAuto
+./EventApp
+```
 
 ## License
 
-To Be Done
+Open access / open-source. This repository is released under the **MIT License**.  
+You may use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies, subject to the MIT terms.

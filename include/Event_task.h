@@ -21,4 +21,4 @@ public:
     void display() const override;
 };
 
-#endif // EVENT_TASK_H
+#endif

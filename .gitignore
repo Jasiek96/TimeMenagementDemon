@@ -4,12 +4,12 @@ obj/
 CMakeFiles/
 cmake_install.cmake
 CMakeCache.txt
-TaskTest
-note
-MeetingTest
-EventAuto
 .gitignore
 DateTimeTestManual
 DateTimeTestAuto
-EventManagerTest
 Makefile
+EventApp
+EventManagerTestAuto
+EventTestAuto
+MeetingTestAuto
+TaskTestAuto
