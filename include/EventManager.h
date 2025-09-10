@@ -1,4 +1,3 @@
-#pragma once
 #include <vector>
 #include <memory>
 #include <string>
@@ -8,6 +7,9 @@
 
 #include <Event.h>
 #include <DateTime.h>
+
+#ifndef EVENT_MANAGER_H
+#define VENT_MANAGER_H
 
 class EventManager
 {
@@ -25,7 +27,7 @@ public:
     void add(std::unique_ptr<Event> ev);
 
     template <typename E, typename... Args>
-    E &emplaceEvent(Args &&...args); // <- definicja TYLKO w .h
+    E &emplaceEvent(Args &&...args);
 
     iterator begin() noexcept;
     iterator end() noexcept;
@@ -39,3 +41,4 @@ public:
     void sortByDate();
     void sortByName();
 };
+#endif

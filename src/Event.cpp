@@ -2,7 +2,6 @@
 #include <Event.h>
 #include <string>
 
-// Konstruktory i destruktor
 Event::Event() : name("NAME"), description("DESCRIPTION"), eventDateTime(DateTime()), priority(3), notification(false) {}
 
 Event::Event(const std::string &name, const std::string &description, const DateTime &eventDateTime, int priority, bool notification)
@@ -26,7 +25,6 @@ Event::~Event()
     // std::cout << "Wydarzenie usunięte" << std::endl;
 }
 
-// Getery
 std::string Event::getName() const
 {
     return name;
@@ -41,27 +39,32 @@ DateTime Event::getEventDateTime() const
 {
     return eventDateTime;
 }
+
 int Event::getPriority() const
 {
     return priority;
 }
+
 bool Event::hasNotification() const
 {
     return notification;
 }
-// Settery
+
 void Event::setName(const std::string &name_i)
 {
     name = name_i;
 }
+
 void Event::setDescription(const std::string &description_i)
 {
     description = description_i;
 }
+
 void Event::setEventDateTime(const DateTime &eventDateTime_i)
 {
     eventDateTime = eventDateTime_i;
 }
+
 void Event::setPriority(int priority_i)
 {
     if (priority_i <= 5 && priority_i >= 1)
@@ -73,11 +76,12 @@ void Event::setPriority(int priority_i)
         std::cerr << "Priorytet poza zakresem 1-5" << std::endl;
     }
 }
+
 void Event::setNotification(bool notification_i)
 {
     notification = notification_i;
 }
-// Metody pomocnicze
+
 void Event::display() const
 {
     std::cout << "Nazwa: " << name << std::endl;

@@ -2,7 +2,6 @@
 #include <gtest/gtest.h>
 #include <sstream>
 
-// Testy konstruktora domyślnego i getterów
 TEST(DateTimeTest, DefaultConstructor)
 {
     DateTime dt;
@@ -26,9 +25,8 @@ TEST(DateTimeTest, DefaultConstructor)
     EXPECT_LE(dt.get_second(), 59);
 }
 
-// Testy konstruktora parametrycznego
 TEST(DateTimeTest, ParametricConstructor)
-{ // poprawne wartości
+{
     DateTime dt(2023, 8, 15, 14, 30, 45);
     EXPECT_EQ(dt.get_year(), 2023);
     EXPECT_EQ(dt.get_month(), 8);
@@ -38,17 +36,14 @@ TEST(DateTimeTest, ParametricConstructor)
     EXPECT_EQ(dt.get_second(), 45);
 }
 
-// Testy metody isValid() dla poprawnej daty
 TEST(DateTimeTest, ValidDate)
 {
     DateTime dt(2024, 2, 29, 14, 30, 45); // Rok przestępny
     EXPECT_TRUE(dt.isValid());
 }
 
-// Testy metody isValid() dla niepoprawnej daty
 TEST(DateTimeTest, InvalidDate)
 {
-    // Sprawdzamy, czy zostanie rzucony wyjątek
     try
     {
         DateTime dt(2025, 2, 30, 14, 30, 45);                                         // Nieistniejąca data
@@ -90,7 +85,6 @@ TEST(DateTimeTest, InvalidDate)
     }
 }
 
-// Testy operatorów porównania
 TEST(DateTimeTest, ComparisonOperators)
 {
     DateTime dt1(2023, 8, 15, 14, 30, 45);
@@ -103,7 +97,6 @@ TEST(DateTimeTest, ComparisonOperators)
     EXPECT_FALSE(dt3 < dt1);
 }
 
-// Testy strumieniowe
 TEST(DateTimeTest, StreamOperators)
 {
     DateTime dt(2023, 8, 15, 14, 30, 45);
@@ -161,7 +154,6 @@ TEST(DateTimeTest, FromString_double)
     EXPECT_EQ(dt.get_second(), 45);
 }
 
-// Definicja funkcji main, która uruchamia wszystkie testy
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);

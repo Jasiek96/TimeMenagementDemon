@@ -1,18 +1,15 @@
 #include <EventManager.h>
 
-#include <algorithm> // sort, find_if, remove_if
-#include <iostream>  // std::cout
-#include <utility>   // std::move
+#include <algorithm>
+#include <iostream>
+#include <utility>
 
-// --- Ctor / dtor (domyślne w .h są OK; tu nie trzeba niczego dopisywać) ---
-
-// --- Dodawanie ---
 void EventManager::add(std::unique_ptr<Event> ev)
 {
     events_.push_back(std::move(ev));
 }
 
-// --- Iteratory ---
+// Iterators
 EventManager::iterator EventManager::begin() noexcept
 {
     return events_.begin();
@@ -33,7 +30,7 @@ EventManager::const_iterator EventManager::end() const noexcept
     return events_.end();
 }
 
-// --- Operacje ---
+// Functions
 void EventManager::list(std::ostream &os) const
 {
     if (events_.empty())
@@ -66,7 +63,7 @@ std::size_t EventManager::removeIf(const std::function<bool(const Event &)> &pre
     return oldSize - events_.size();
 }
 
-// --- Sortowanie ---
+// Sorting
 void EventManager::sortByDate()
 {
     std::sort(events_.begin(), events_.end(),

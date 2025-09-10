@@ -1,13 +1,13 @@
 #include <DateTime.h>
-#include <iomanip> // std::setw, std::setfill
-#include <sstream> // std::ostringstream
+#include <iomanip>
+#include <sstream>
 
 DateTime::DateTime()
-{ // Konstruktor domyślny - aktualna data i czas
+{
     time_t now = time(0);
     tm *localtm = localtime(&now);
     day = localtm->tm_mday;
-    month = localtm->tm_mon + 1; // Miesiące są indeksowane od 0
+    month = localtm->tm_mon + 1;
     year = localtm->tm_year + 1900;
     hour = localtm->tm_hour;
     minute = localtm->tm_min;
@@ -19,7 +19,7 @@ DateTime::DateTime(int year_i, int month_i, int day_i, int hour_i, int minute_i,
 {
     if (!isValid())
     {
-        throw InvalidDateTimeException(); // Rzucenie wyjątku
+        throw InvalidDateTimeException();
     }
 }
 
@@ -42,7 +42,7 @@ DateTime &DateTime::operator=(const DateTime &dt)
     return *this;
 }
 
-// Gettery
+// Getters
 int DateTime::get_day() const { return day; }
 int DateTime::get_month() const { return month; }
 int DateTime::get_year() const { return year; }
@@ -50,7 +50,7 @@ int DateTime::get_hour() const { return hour; }
 int DateTime::get_minute() const { return minute; }
 int DateTime::get_second() const { return second; }
 
-// Konwersje do stringów
+// Convert to string
 std::string DateTime::toDateString() const
 {
     std::ostringstream oss;
@@ -74,7 +74,7 @@ std::string DateTime::toString() const
     return toDateString() + " " + toTimeString();
 }
 
-// Metody wyświetlające dane
+// Display
 void DateTime::display_date() const
 {
     std::cout << toDateString() << std::endl;
@@ -90,6 +90,7 @@ void DateTime::display() const
     std::cout << toString() << std::endl;
 }
 
+// Setters
 void DateTime::set_date(int year_i, int month_i, int day_i)
 {
     day = day_i;
@@ -117,11 +118,14 @@ void DateTime::set_time(int hour_i, int minute_i, int second_i)
         second = 0;
     }
 }
+
 void DateTime::set_date_time(int year_i, int month_i, int day_i, int hour_i, int minute_i, int second_i)
 {
     set_date(year_i, month_i, day_i);
     set_time(hour_i, minute_i, second_i);
 }
+
+// Validation
 bool DateTime::isValid() const
 {
     return (isValid_Date() && isValid_Time());
@@ -150,6 +154,7 @@ bool DateTime::isValid_Date() const
     }
     return true;
 }
+
 bool DateTime::isValid_Time() const
 {
     if (hour < 0 || hour > 23 || minute < 0 || minute > 59 || second < 0 || second > 59)
@@ -158,15 +163,19 @@ bool DateTime::isValid_Time() const
     }
     return true;
 }
+
+// Comparision
 bool DateTime::operator==(const DateTime &dt) const
 {
     return (day == dt.day && month == dt.month && year == dt.year &&
             hour == dt.hour && minute == dt.minute && second == dt.second);
 }
+
 bool DateTime::operator!=(const DateTime &dt) const
 {
     return !(*this == dt);
 }
+
 bool DateTime::operator<(const DateTime &dt) const
 {
     if (year != dt.year)
@@ -181,15 +190,19 @@ bool DateTime::operator<(const DateTime &dt) const
         return minute < dt.minute;
     return second < dt.second;
 }
+
 bool DateTime::operator>(const DateTime &dt) const
 {
     return dt < *this;
 }
+
 std::ostream &operator<<(std::ostream &os, const DateTime &dt)
 {
     os << dt.toString();
     return os;
 }
+
+// Stream
 std::istream &operator>>(std::istream &is, DateTime &dt)
 {
     std::string dateTimeStr;
@@ -204,12 +217,11 @@ std::istream &operator>>(std::istream &is, DateTime &dt)
     }
     catch (const std::exception &e)
     {
-        // std::cerr << "Error parsing DateTime: " << e.what() << std::endl;
         is.setstate(std::ios::failbit);
     }
     return is;
 }
-// Implementacja metody fromString
+// Convert From String
 DateTime DateTime::fromString(const std::string &dateTimeStr)
 {
     int year_i, month_i, day_i, hour_i, minute_i, second_i;

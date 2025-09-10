@@ -20,13 +20,13 @@ private:
     int hour, minute, second;
 
 public:
-    //  Konstruktory
-    DateTime(); // Aktualna data i czas
+    // Constructors
+    DateTime();
     DateTime(int day, int month, int year, int hour = 0, int minute = 0, int second = 0);
-    DateTime(const DateTime &dt); // Konstruktor kopiujący
-    ~DateTime();                  // Destruktor
+    DateTime(const DateTime &dt);
+    ~DateTime();
 
-    //  Gettery (z `const`)
+    // Getters
     int get_day() const;
     int get_month() const;
     int get_year() const;
@@ -34,41 +34,38 @@ public:
     int get_minute() const;
     int get_second() const;
 
-    //  Konwersja na stringi
+    // Convert to string
     std::string toDateString() const;
     std::string toTimeString() const;
-    std::string toString() const; // Pełna data + czas
+    std::string toString() const;
 
-    // wyświetlanie
+    // Display
     void display_date() const;
     void display_time() const;
     void display() const;
 
-    //  Konwersja z stringa
+    // Convert From String
     static DateTime fromString(const std::string &dateTimeStr);
 
-    //  Settery
+    // Setters
     void set_date(int day, int month, int year);
     void set_time(int hour, int minute, int second = 0);
     void set_date_time(int day, int month, int year, int hour = 0, int minute = 0, int second = 0);
 
-    //  Walidacja daty
+    // Validation
     bool isValid() const;
     bool isValid_Date() const;
     bool isValid_Time() const;
 
-    //  Operatory porównania
+    // Comparision
     bool operator==(const DateTime &dt) const;
     bool operator!=(const DateTime &dt) const;
     bool operator<(const DateTime &dt) const;
     bool operator>(const DateTime &dt) const;
-
-    //  Operatory strumieniowe
+    DateTime &operator=(const DateTime &dt);
+    // Stream
     friend std::ostream &operator<<(std::ostream &os, const DateTime &dt);
     friend std::istream &operator>>(std::istream &is, DateTime &dt);
-
-    //  Operator przypisania
-    DateTime &operator=(const DateTime &dt);
 };
 
-#endif // DATETIME_H
+#endif

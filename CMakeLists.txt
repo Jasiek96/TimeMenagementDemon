@@ -40,3 +40,6 @@ target_link_libraries(TaskTest ${GTEST_LIBRARIES} pthread)
 # Executable for testEventManager
 add_executable(EventManagerTest ${COMMON_SOURCES} test/testEventManager.cpp)
 target_link_libraries(EventManagerTest ${GTEST_LIBRARIES} pthread)
+
+# Executable for main
+add_executable(EventApp ${COMMON_SOURCES} src/app.cpp)

@@ -29,8 +29,6 @@ static std::unique_ptr<Event> makeMeeting(
     return std::make_unique<Meeting>(name, desc, dt, location, attendees, priority, notify);
 }
 
-// ---------------------- TESTY -------------------------------
-
 TEST(EventManager, AddAndFindByName)
 {
     EventManager mgr;

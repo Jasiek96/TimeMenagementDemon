@@ -3,7 +3,6 @@
 #include <gtest/gtest.h>
 #include <sstream>
 
-// Test konstuktora domyślego i geterów
 TEST(EventTest, DefaultConstructor)
 {
     Event event;
@@ -32,7 +31,7 @@ TEST(EventTest, DefaultConstructor)
     EXPECT_GE(dt.get_second(), 0);
     EXPECT_LE(dt.get_second(), 59);
 }
-// Testy konstruktora parametrycznego
+
 TEST(EventTest, ParametricConstructor)
 {
     DateTime dt(2023, 8, 15, 14, 30, 45);
@@ -52,7 +51,7 @@ TEST(EventTest, ParametricConstructor)
     EXPECT_EQ(dt_read.get_minute(), 30);
     EXPECT_EQ(dt_read.get_second(), 45);
 }
-// Testy konstruktora kopiujacego
+
 TEST(EventTest, CopyConstructor)
 {
     DateTime dt(2023, 8, 15, 14, 30, 45);
@@ -67,7 +66,6 @@ TEST(EventTest, CopyConstructor)
     EXPECT_EQ(event_2.getEventDateTime(), dt);
 }
 
-// Testy operatora =
 TEST(EventTest, EqualConstructor)
 {
     DateTime dt(2023, 8, 15, 14, 30, 45);
@@ -82,7 +80,6 @@ TEST(EventTest, EqualConstructor)
     EXPECT_EQ(event_2.getEventDateTime(), dt);
 }
 
-// Test seterów
 TEST(EventTest, Setters)
 {
     Event event_3;
@@ -100,7 +97,6 @@ TEST(EventTest, Setters)
     EXPECT_EQ(event_3.getEventDateTime(), dt);
 }
 
-// Test display
 TEST(EventTest, Display)
 {
     Event event_3;
@@ -118,7 +114,6 @@ TEST(EventTest, Display)
     EXPECT_EQ(event_3.getEventDateTime(), dt);
 }
 
-// Definicja funkcji main, która uruchamia wszystkie testy
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);
