@@ -3,7 +3,8 @@
 #include <DateTime.h>
 #include <sstream>
 
-TEST(TaskTest, ConstructorAndGetters) {
+TEST(TaskTest, ConstructorAndGetters)
+{
     DateTime dt(2023, 8, 15, 14, 30, 45);
     Task task("Zadanie1", "Opis zadania", dt, 4, true);
     EXPECT_EQ(task.getName(), "Zadanie1");
@@ -14,7 +15,8 @@ TEST(TaskTest, ConstructorAndGetters) {
     EXPECT_FALSE(task.isCompleted());
 }
 
-TEST(TaskTest, MarkDoneAndSetCompleted) {
+TEST(TaskTest, MarkDoneAndSetCompleted)
+{
     Task task("Zadanie2", "Opis", DateTime(2023, 1, 1), 2, false);
     EXPECT_FALSE(task.isCompleted());
     task.markDone();
@@ -23,7 +25,8 @@ TEST(TaskTest, MarkDoneAndSetCompleted) {
     EXPECT_FALSE(task.isCompleted());
 }
 
-TEST(TaskTest, Setters) {
+TEST(TaskTest, Setters)
+{
     Task task("A", "B", DateTime(2023, 1, 1));
     task.setName("Nowa nazwa");
     task.setDescription("Nowy opis");
@@ -38,10 +41,11 @@ TEST(TaskTest, Setters) {
     EXPECT_EQ(task.getEventDateTime(), dt);
 }
 
-TEST(TaskTest, Display) {
+TEST(TaskTest, Display)
+{
     Task task("Zadanie3", "Opis3", DateTime(2024, 5, 10, 12, 0, 0), 3, true);
     std::ostringstream oss;
-    std::streambuf* oldCout = std::cout.rdbuf(oss.rdbuf());
+    std::streambuf *oldCout = std::cout.rdbuf(oss.rdbuf());
     task.display();
     std::cout.rdbuf(oldCout);
     std::string output = oss.str();
@@ -51,7 +55,8 @@ TEST(TaskTest, Display) {
     EXPECT_NE(output.find("ukończone"), std::string::npos) << "Status powinien być nieukończone na początku";
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }

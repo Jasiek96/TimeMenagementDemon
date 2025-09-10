@@ -5,11 +5,13 @@
 #include <Event.h>
 #include <string>
 
-class Task : public Event {
+class Task : public Event
+{
 private:
     bool completed;
+
 public:
-    Task(const std::string& name, const std::string& description, const DateTime& dateTime,
+    Task(const std::string &name, const std::string &description, const DateTime &dateTime,
          int priority = 3, bool notification = false);
 
     void markDone();

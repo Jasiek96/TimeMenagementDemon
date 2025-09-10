@@ -4,7 +4,8 @@
 #include <sstream>
 #include <vector>
 
-TEST(MeetingTest, ConstructorAndGetters) {
+TEST(MeetingTest, ConstructorAndGetters)
+{
     DateTime dt(2023, 8, 15, 14, 30, 45);
     std::vector<std::string> participants = {"Anna", "Jan"};
     Meeting meeting("Spotkanie1", "Opis spotkania", dt, "Sala 101", participants, 4, true);
@@ -18,7 +19,8 @@ TEST(MeetingTest, ConstructorAndGetters) {
     EXPECT_EQ(meeting.getParticipants()[0], "Anna");
 }
 
-TEST(MeetingTest, Setters) {
+TEST(MeetingTest, Setters)
+{
     Meeting meeting("A", "B", DateTime(2023, 1, 1), "Miejsce", {}, 2, false);
     meeting.setName("Nowa nazwa");
     meeting.setDescription("Nowy opis");
@@ -38,7 +40,8 @@ TEST(MeetingTest, Setters) {
     EXPECT_EQ(meeting.getParticipants().size(), 2);
 }
 
-TEST(MeetingTest, AddAndRemoveParticipants) {
+TEST(MeetingTest, AddAndRemoveParticipants)
+{
     Meeting meeting("A", "B", DateTime(2023, 1, 1), "Miejsce", {}, 2, false);
     meeting.addParticipant("Jan");
     meeting.addParticipant("Anna");
@@ -48,11 +51,12 @@ TEST(MeetingTest, AddAndRemoveParticipants) {
     EXPECT_EQ(meeting.getParticipants()[0], "Anna");
 }
 
-TEST(MeetingTest, Display) {
+TEST(MeetingTest, Display)
+{
     std::vector<std::string> parts = {"Jan", "Anna"};
     Meeting meeting("Spotkanie2", "Opis2", DateTime(2024, 5, 10, 12, 0, 0), "Sala 202", parts, 3, true);
     std::ostringstream oss;
-    std::streambuf* oldCout = std::cout.rdbuf(oss.rdbuf());
+    std::streambuf *oldCout = std::cout.rdbuf(oss.rdbuf());
     meeting.display();
     std::cout.rdbuf(oldCout);
     std::string output = oss.str();
@@ -64,7 +68,8 @@ TEST(MeetingTest, Display) {
     EXPECT_NE(output.find("2024-05-10 12:00:00"), std::string::npos);
 }
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv)
+{
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }

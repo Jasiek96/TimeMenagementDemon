@@ -28,8 +28,7 @@ This project aims to provide a robust time management solution. Users can schedu
 
 Step-by-step instructions on how to set up the project:
 
-To Be Done 
-
+To Be Done
 
 ## Usage
 
