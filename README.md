@@ -11,7 +11,7 @@ A small C++ project focused on date/time utilities and event structures.
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Requirements](#requirements)
-- [Build & Run ](# Build & Run)
+- [Build & Run ](#Build&Run)
 - [License](#license)
 
 ---
@@ -45,7 +45,7 @@ TimeMenagementDemon/
 
 > If GoogleTest is not fetched automatically by CMake in your setup, install it.
 
-## Build & Run
+## Build&Run
 
 From the **repository root**, do:
 
